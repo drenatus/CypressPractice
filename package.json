@@ -1,0 +1,57 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:chrome": "cypress run --headed --browser chrome",
+    "test:firefox": "cypress run --browser firefox --headed",
+    "test:edge": "cypress run --browser edge --headed",
+    "test:headless": "cypress run",
+    "cypress:open": "cypress open"
+  },
+  "author": "",
+  "license": "ISC",
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": "cypress/support/steps/**/*.js",
+    "filterSpecs": true,
+    "omitFiltered": true,
+    "json": {
+      "enabled": true,
+      "formatter": "./node_modules/@deepakvishwakarma/cucumber-json-formatter/lib/main.js",
+      "output": "cypress/reports/report.cucumber.json"
+    },
+    "html": {
+      "enabled": true,
+      "output": "cypress/reports/report.cucumber.html"
+    },
+    "messages": {
+      "enabled": true,
+      "output": "cypress/reports/cucumber-messages.ndjson"
+    }
+  },
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^17.2.1",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "@cucumber/cucumber": "^9.1.2",
+    "@cypress/browserify-preprocessor": "^3.0.2",
+    "@cypress/xpath": "^2.0.3",
+    "@deepakvishwakarma/cucumber-json-formatter": "^0.0.3",
+    "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
+    "cypress": "^12.13.0",
+    "cypress-plugin-api": "^2.11.1",
+    "cypress-plugin-tab": "^1.0.5",
+    "cypress-utils": "^3.0.0",
+    "cypress-wait-until": "1.7.2",
+    "cypress-xpath": "^2.0.1",
+    "fs-extra": "11.1.1"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.0.2",
+    "babel-loader": "9.1.2",
+    "gerador-validador-cpf": "5.0.2",
+    "har-validator": "^5.1.5",
+    "path": "^0.12.7",
+    "webpack": "5.85.1"
+  }
+}
